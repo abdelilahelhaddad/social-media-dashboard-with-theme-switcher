@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+//Primary
+$Lime-Green: hsl(163, 72%, 41%);
+$Bright-Red: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram1: hsl(37, 97%, 70%);
+$Instagram2:hsl(329, 70%, 58%);
+$YouTube: hsl(348, 97%, 39%);
+
+//Dark Theme 
+$Toggle-linear-gradient1: hsl(210, 78%, 56%);
+$Toggle-linear-gradient2: hsl(146, 68%, 55%);
+
+//Light Theme 
+$Toggle: hsl(230, 22%, 74%);
+
+//Dark Theme 
+$Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+$Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+$Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+$Desaturated-Blue-Text: hsl(228, 34%, 66%);
+$White-Text: hsl(0, 0%, 100%);
+
+//Light Theme 
+// $White-BG: hsl(0, 0%, 100%);
+// $Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+// $Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+// $Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+// $Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h4,
+p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.green {
+  color: $Lime-Green;
+}
+
+.red {
+  color: $Bright-Red;
+}
+
+#main {
+  background-color: $Very-Dark-Blue-BG;
+  height: 100vh;
+
+  .top-dashboard {
+    background-color: $Very-Dark-Blue-Top-BG-Pattern;
+    height: 33vh;
+    border-radius: 0 0 25px 25px;
+
+
+    .container {
+      flex-direction: column;
+      padding: 2rem 0;
+
+      .flex {
+        justify-content: space-between;
+
+        .left {
+          align-items: center;
+
+          h2 {
+            color: $White-Text;
+          }
+
+          h4 {
+            color: $Desaturated-Blue-Text;
+          }
+        }
+
+        .right {
+          display: flex;
+          align-items: center;
+
+          h4 {
+            color: $Desaturated-Blue-Text;
+            margin-right: 1rem;
+          }
+
+          .toggle {
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to right, $Toggle-linear-gradient1, $Toggle-linear-gradient2);
+            border-radius: 20px;
+            position: relative;
+
+            .circle {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background-color: $Very-Dark-Blue-Top-BG-Pattern;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+              margin: 0 .3rem;
+
+            }
+          }
+        }
+      }
+
+      .sm-followers {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        div {
+          justify-self: center;
+          background-color: $Dark-Desaturated-Blue-Card-BG;
+          width: 250px;
+          height: 200px;
+
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          p {
+            text-align: center;
+            margin-left: 1rem;
+            color: $Desaturated-Blue-Text;
+          }
+
+          p.green {
+            color: $Lime-Green !important;
+          }
+
+          p.red {
+            color: $Bright-Red !important;
+          }
+
+          h1 {
+            font-size: 5rem;
+            text-align: center;
+            color: $White-Text;
+          }
+        }
+
+        .facebook {
+          border-top: 3px solid $Facebook;
+          border-radius: 3px;
+        }
+
+        .twitter {
+          border-top: 3px solid $Twitter;
+          border-radius: 3px;
+        }
+
+        .instagram {
+          border-radius: 3px;
+
+          .linear-gradiant {
+            background: linear-gradient(to right, $Instagram1, $Instagram2);
+            width: 250px;
+            height: 9px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+          }
+        }
+
+        .youtube {
+          border-top: 3px solid $YouTube;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}
