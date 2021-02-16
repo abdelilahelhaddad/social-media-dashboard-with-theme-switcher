@@ -83,7 +83,6 @@ p {
 
 #main {
   background-color: $Very-Dark-Blue-BG;
-  height: 100vh;
 
   .top-dashboard {
     background-color: $Very-Dark-Blue-Top-BG-Pattern;
@@ -159,6 +158,12 @@ p {
             justify-content: center;
           }
 
+          .followers {
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: .6rem;
+          }
+
           p {
             text-align: center;
             margin-left: 1rem;
@@ -207,6 +212,58 @@ p {
           border-radius: 3px;
         }
       }
+    }
+  }
+
+  .overview {
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: $White-Text;
+      margin-bottom: 2rem;
+    }
+
+    .flex {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      gap: 6rem;
+      margin-bottom: 6rem;
+
+      >div {
+        display: flex;
+        flex-direction: column;
+        flex: 20%;
+        gap: 2rem;
+        border-radius: 3px;
+        width: 250px;
+        height: 110px;
+        padding: 2rem;
+        background-color: $Dark-Desaturated-Blue-Card-BG;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+
+          h4 {
+            color: $Desaturated-Blue-Text;
+          }
+
+          div {
+            display: flex;
+            align-items: center;
+
+            .red,
+            .green {
+              margin-left: .4rem;
+            }
+          }
+        }
+
+      }
+
     }
   }
 }

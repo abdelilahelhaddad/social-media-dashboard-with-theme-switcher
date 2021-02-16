@@ -58,7 +58,6 @@ p {
 
 #main {
   background-color: #1e202a;
-  height: 100vh;
 }
 
 #main .top-dashboard {
@@ -161,6 +160,12 @@ p {
           justify-content: center;
 }
 
+#main .top-dashboard .container .sm-followers div .followers {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: .6rem;
+}
+
 #main .top-dashboard .container .sm-followers div p {
   text-align: center;
   margin-left: 1rem;
@@ -207,5 +212,78 @@ p {
 #main .top-dashboard .container .sm-followers .youtube {
   border-top: 3px solid #c4032a;
   border-radius: 3px;
+}
+
+#main .overview {
+  margin-top: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main .overview h2 {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+#main .overview .flex {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  gap: 6rem;
+  margin-bottom: 6rem;
+}
+
+#main .overview .flex > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  gap: 2rem;
+  border-radius: 3px;
+  width: 250px;
+  height: 110px;
+  padding: 2rem;
+  background-color: #252a41;
+}
+
+#main .overview .flex > div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#main .overview .flex > div div h4 {
+  color: #8b97c6;
+}
+
+#main .overview .flex > div div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main .overview .flex > div div div .red,
+#main .overview .flex > div div div .green {
+  margin-left: .4rem;
 }
 /*# sourceMappingURL=style.css.map */
