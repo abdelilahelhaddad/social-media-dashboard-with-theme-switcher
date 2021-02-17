@@ -22,6 +22,7 @@ $Toggle: hsl(230, 22%, 74%);
 $Very-Dark-Blue-BG: hsl(230, 17%, 14%);
 $Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
 $Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+$Dark-Desaturated-Blue-Card-BG-Hover: hsl(228, 28%, 25%);
 $Desaturated-Blue-Text: hsl(228, 34%, 66%);
 $White-Text: hsl(0, 0%, 100%);
 
@@ -29,6 +30,7 @@ $White-Text: hsl(0, 0%, 100%);
 // $White-BG: hsl(0, 0%, 100%);
 // $Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
 // $Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+// $Light-Grayish-Blue-Card-BG-Hover: hsl(227, 47%, 91%);
 // $Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
 // $Very-Dark-Blue-Text: hsl(230, 17%, 14%);
 
@@ -135,12 +137,16 @@ p {
               left: 0;
               transform: translateY(-50%);
               margin: 0 .3rem;
+            }
 
+            &:hover .circle {
+              background-color: $Dark-Desaturated-Blue-Card-BG-Hover;
             }
           }
         }
       }
 
+      //Social Media Followers
       .sm-followers {
         display: flex;
         justify-content: space-between;
@@ -156,6 +162,12 @@ p {
             display: flex;
             align-items: center;
             justify-content: center;
+
+          }
+
+          &:hover,
+          &:hover div {
+            background: $Dark-Desaturated-Blue-Card-BG-Hover;
           }
 
           .followers {
@@ -215,6 +227,7 @@ p {
     }
   }
 
+  //Today's Overview
   .overview {
     margin-top: 15rem;
     display: flex;
@@ -251,6 +264,10 @@ p {
             color: $Desaturated-Blue-Text;
           }
 
+          h2 {
+            font-size: 2em;
+          }
+
           div {
             display: flex;
             align-items: center;
@@ -262,8 +279,102 @@ p {
           }
         }
 
+        &:hover {
+          background-color: $Dark-Desaturated-Blue-Card-BG-Hover;
+        }
+
       }
 
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 768px;
+  }
+
+  #main {
+    .top-dashboard {
+      height: 25vh;
+
+      .container {
+        padding: 20px;
+
+        .flex {
+          justify-content: space-evenly;
+
+          .left:after {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 1px;
+            background-color: $Dark-Desaturated-Blue-Card-BG;
+            margin-top: 1.5rem;
+          }
+
+          .right {
+            margin-top: 3rem;
+            justify-content: space-between;
+          }
+
+        }
+
+        //Social Media Followers
+        .sm-followers {
+          flex-direction: column;
+          justify-content: center;
+          margin-top: 4rem;
+
+          div {
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+
+          }
+
+          .facebook,
+          .twitter,
+          .instagram,
+          .youtube {
+            width: 100%;
+          }
+
+          .instagram {
+            border-radius: 3px;
+
+            .linear-gradiant {
+              margin-top: -.4rem;
+              width: 100%;
+              height: 12px;
+            }
+          }
+
+        }
+      }
+
+    }
+
+    //Today's Overview
+    .overview {
+      margin-top: 90rem;
+      padding: 0 25px;
+      flex-direction: column;
+
+      .flex {
+        gap: 1.5rem;
+
+        >div {
+          gap: 2rem;
+          width: 100%;
+        }
+
+      }
     }
   }
 }
