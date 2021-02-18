@@ -27,12 +27,12 @@ $Desaturated-Blue-Text: hsl(228, 34%, 66%);
 $White-Text: hsl(0, 0%, 100%);
 
 //Light Theme 
-// $White-BG: hsl(0, 0%, 100%);
-// $Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
-// $Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
-// $Light-Grayish-Blue-Card-BG-Hover: hsl(227, 47%, 91%);
-// $Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
-// $Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+$White-BG: hsl(0, 0%, 100%);
+$Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+$Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+$Light-Grayish-Blue-Card-BG-Hover: hsl(227, 47%, 91%);
+$Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+$Very-Dark-Blue-Text: hsl(230, 17%, 14%);
 
 html {
   font-size: 62.5%;
@@ -84,10 +84,8 @@ p {
 }
 
 #main {
-  background-color: $Very-Dark-Blue-BG;
 
   .top-dashboard {
-    background-color: $Very-Dark-Blue-Top-BG-Pattern;
     height: 33vh;
     border-radius: 0 0 25px 25px;
 
@@ -102,12 +100,20 @@ p {
         .left {
           align-items: center;
 
-          h2 {
+          h2.dark {
             color: $White-Text;
           }
 
-          h4 {
+          h2.light {
+            color: $Very-Dark-Blue-Text;
+          }
+
+          h4.dark {
             color: $Desaturated-Blue-Text;
+          }
+
+          h4.light {
+            color: $Dark-Grayish-Blue-Text;
           }
         }
 
@@ -116,14 +122,20 @@ p {
           align-items: center;
 
           h4 {
-            color: $Desaturated-Blue-Text;
             margin-right: 1rem;
+          }
+
+          h4.dark {
+            color: $Desaturated-Blue-Text;
+          }
+
+          h4.light {
+            color: $Dark-Grayish-Blue-Text;
           }
 
           .toggle {
             width: 40px;
             height: 20px;
-            background: linear-gradient(to right, $Toggle-linear-gradient1, $Toggle-linear-gradient2);
             border-radius: 20px;
             position: relative;
 
@@ -131,7 +143,6 @@ p {
               width: 16px;
               height: 16px;
               border-radius: 50%;
-              background-color: $Very-Dark-Blue-Top-BG-Pattern;
               position: absolute;
               top: 50%;
               left: 0;
@@ -139,8 +150,33 @@ p {
               margin: 0 .3rem;
             }
 
-            &:hover .circle {
+          }
+
+          .toggle.dark {
+            background: linear-gradient(to right, $Toggle-linear-gradient1, $Toggle-linear-gradient2);
+
+            .circle.dark {
+              background-color: $Very-Dark-Blue-Top-BG-Pattern;
+            }
+
+            &:hover .circle.dark {
               background-color: $Dark-Desaturated-Blue-Card-BG-Hover;
+            }
+          }
+
+          .toggle.light {
+            background: $Toggle;
+
+            .circle.light {
+              background-color: $Very-Pale-Blue-Top-BG-Pattern;
+            }
+
+            &:hover {
+              background: linear-gradient(to right, $Toggle-linear-gradient1, $Toggle-linear-gradient2);
+            }
+
+            &:hover .circle.light {
+              background-color: $Very-Pale-Blue-Top-BG-Pattern;
             }
           }
         }
@@ -197,6 +233,31 @@ p {
           }
         }
 
+        div.light {
+          background-color: $Light-Grayish-Blue-Card-BG;
+
+          &:hover,
+          &:hover div {
+            background: $Light-Grayish-Blue-Card-BG-Hover;
+          }
+
+          p {
+            color: $Dark-Grayish-Blue-Text;
+          }
+
+          p.green {
+            color: $Lime-Green !important;
+          }
+
+          p.red {
+            color: $Bright-Red !important;
+          }
+
+          h1 {
+            color: $Very-Dark-Blue-Text;
+          }
+        }
+
         .facebook {
           border-top: 3px solid $Facebook;
           border-radius: 3px;
@@ -219,12 +280,26 @@ p {
           }
         }
 
+        .instagram.light {
+          .linear-gradiant.light {
+            background: linear-gradient(to right, $Instagram1, $Instagram2);
+          }
+        }
+
         .youtube {
           border-top: 3px solid $YouTube;
           border-radius: 3px;
         }
       }
     }
+  }
+
+  .top-dashboard.dark {
+    background-color: $Very-Dark-Blue-Top-BG-Pattern;
+  }
+
+  .top-dashboard.light {
+    background-color: $Very-Pale-Blue-Top-BG-Pattern;
   }
 
   //Today's Overview
@@ -287,6 +362,36 @@ p {
 
     }
   }
+
+  .overview.light {
+    h2 {
+      color: $Very-Dark-Blue-Text;
+    }
+
+    .flex {
+      >div {
+        background-color: $Light-Grayish-Blue-Card-BG;
+
+        div {
+          h4 {
+            color: $Dark-Grayish-Blue-Text;
+          }
+        }
+
+        &:hover {
+          background-color: $Light-Grayish-Blue-Card-BG-Hover;
+        }
+      }
+    }
+  }
+}
+
+#main.dark {
+  background-color: $Very-Dark-Blue-BG;
+}
+
+#main.light {
+  background-color: $White-BG;
 }
 
 @media screen and (max-width:768px) {
@@ -373,7 +478,6 @@ p {
           gap: 2rem;
           width: 100%;
         }
-
       }
     }
   }
